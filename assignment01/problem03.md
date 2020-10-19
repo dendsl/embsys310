@@ -1,1 +1,5 @@
-![Image of 'Hello World' Output](C:\UW\EMBSYS_310\Assignment_01\SerialOutput.jpeg)
+# Problem
+Screen shot showing the output from your “Hello World” program
+
+# Result 
+![Image of 'Hello World' Output](images/SerialOutput.JPG)
