@@ -1,3 +1,17 @@
+**Observe and Answer**: Create a poject with the following program in a main.c file, then follow the questions below:
+
+        int main() {
+            int counter = 0;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            counter++;
+            return 0;
+         }
+
 1. Inject 0x7FFFFFFF for the “counter” value in the variable window, then step thru the program only once to increment “counter”.
     * Part A - **Question**: What is the value of the “counter” from the “Locals” window?\
     **Answer**: -2147483648
