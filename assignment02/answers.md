@@ -7,17 +7,19 @@
     
     * Part C - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
     **Answers**: 
-    N = 1 - TODO \
-    C = 1 - TODO
-    
+      * N = 1 - The *Negative* condition flag was set because the incrementing of a positive-signed variable caused the MSB to become
+      *1*, causing the *counter* variable to become negative, triggering the flag.   
+      * V = 1 - The *Overflow* condition flag was set because the MSB was changed while adding two numbers (in this case: 1 and
+      2147483647) that shared the same sign (MSBs were the same).  
+      
 2. If your write all Fs (0XFFFFFFFF) in the Register value for “counter” then step thru the program once to increment “counter”.
     * Part A - **Question**: What happens to the value of “counter” in the “Locals” window?\
     **Answer**: counter = 0
     
     * Part B - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
     **Answer**:
-    N = 0 - TODO \
-    C = 0 - TODO
+    N = 0 - TODO  
+    C = 0 - TODO  
     
 3. Change the “counter” variable type in your code to “unsigned int”. Inject the values “0x7FFFFFFF” then step thru the program to increment the “counter” once.
     * Part A - **Question**: What is the value of “counter” in the “Locals” window after incrementing for each value?\
@@ -25,7 +27,7 @@
     
     * Part B - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
     **Answer**:
-    N = 1 - TODO \
+    N = 1 - TODO  
     C = 1 - TODO
  
 4. Change the “counter” variable type in your code to “unsigned”. Inject the values “0xFFFFFFFF” then step thru the program to increment the “counter” once.
@@ -34,7 +36,7 @@
     
     * Part B - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
     **Answer**:
-    N = 0 - TODO \
+    N = 0 - TODO  
     C = 0 - TODO
     
 5. Move the “counter’ variable outside of main (at the top of the file):
@@ -61,6 +63,7 @@
             counter ++;
             return 0;
         }
+        
    * Part A - **Question**: What is the value of “counter” at the end of the program (halting at the return 0 statement)\
     **Answer**: 4
     
