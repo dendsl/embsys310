@@ -62,7 +62,7 @@
             return 0;
         }
    * Part A - **Question**: What is the value of “counter” at the end of the program (halting at the return 0 statement)\
-    **Answer**: 5
+    **Answer**: 4
     
     * Part B - **Question**: Explain why the counter value has changed?\
     **Answer**: because pointer...TODO
