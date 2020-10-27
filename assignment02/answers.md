@@ -50,6 +50,35 @@
     * Part D - **Question** What is the address of the “counter” variable in memory?\
     **Answer**: 0x20000000
     
+6. Change the source code to the following, then run the program in the simulator:
+```C
+int counter = 0x0;
+int main() {
+   int *p_int = (int *)0x20000000;
+   ++(*p_int);
+   ++(*p_int);
+   ++(*p_int);
+   counter ++;
+   return 0;
+}
+```
+
+    * Part A - **Question**: What is the value of “counter” at the end of the program (halting at the return 0 statement)\
+    **Answer**: 5
+    
+    * Part B - **Question**: Explain why the counter value has changed?\
+    **Answer**: because pointer...TODO
+    
+7. Run the same program on the evaluation board:
+    * Part A - **Question**: What is the address where “counter” is stored?\
+    **Answer**: 0x20000000
+    
+    * Part B - **Question**: Is the “counter” variable stored in RAM or ROM?\
+    **Answer**: RAM
+    
+    * Part C - **Question**: What is the value of “counter” at the end of the program (halting at the return 0 statement)?\
+    **Answer**: 4
+    
     
     
  
