@@ -6,10 +6,10 @@
     **Answer**: 0x80000000
     
     * Part C - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
-    **Answers**: 
-      * N = 1 - The *Negative* condition flag was set because the incrementing of a positive-signed variable caused the MSB to become
+    **Answers**:  
+      N = 1 - The *Negative* condition flag was set because the incrementing of a positive-signed variable caused the MSB to become
       *1*, causing the *counter* variable to become negative, triggering the flag.   
-      * V = 1 - The *Overflow* condition flag was set because the MSB was changed while adding two numbers (in this case: 1 and
+      V = 1 - The *Overflow* condition flag was set because the MSB was changed while adding two numbers (in this case: 1 and
       2147483647) that shared the same sign (MSBs were the same).  
       
 2. If your write all Fs (0XFFFFFFFF) in the Register value for “counter” then step thru the program once to increment “counter”.
@@ -17,27 +17,33 @@
     **Answer**: counter = 0
     
     * Part B - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
-    **Answer**:
-    N = 0 - TODO  
-    C = 0 - TODO  
+    **Answer**:  
+      N = 0 - The *Negative* condition flag *not* was set because the incrementing of the negative-signed variable caused the MSB to
+      become *0*, causing the *counter* variable to become positive, therefore the negative flag is false.   
+      V = 0 - The *Overflow* condition flag was *not* set because the sign of the two numbers (in this case: -1 and 1) are not the
+      same. In these cases, overflow never occurs.
     
 3. Change the “counter” variable type in your code to “unsigned int”. Inject the values “0x7FFFFFFF” then step thru the program to increment the “counter” once.
     * Part A - **Question**: What is the value of “counter” in the “Locals” window after incrementing for each value?\
     **Answer**: 2147483648
     
     * Part B - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
-    **Answer**:
-    N = 1 - TODO  
-    C = 1 - TODO
+    **Answer**:  
+      N = 1 - The *Negative* condition flag was set for the same reasons as Part 1, C. However, we can ignore the result of this
+      flag because our variable is *unsigned*. The CPU instruction for setting this flag is the same, regardless if the variable is
+      unsigned or signed because the CPU does not know the distinction.   
+      V = 1 - The *Overflow* condition flag was set for the same reason as Part 1, C. However, for the reason above - we can ignore
+      this flag. 
  
 4. Change the “counter” variable type in your code to “unsigned”. Inject the values “0xFFFFFFFF” then step thru the program to increment the “counter” once.
     * Part A - **Question**: What is the value of “counter” in the “Locals” window after incrementing for each value?\
     **Answer**: 0
     
     * Part B - **Question**: Please note down if the N and/or V flags are set in the APSR register. And explain why.\
-    **Answer**:
-    N = 0 - TODO  
-    C = 0 - TODO
+    **Answer**:  
+      N = 0 - The *Negative* condition flag was *not* set because the incrementation resulted in a positive output.   
+      V = 0 - The *Overflow* condition flag was *not* set because the incrementation took place between two numbers with different
+      MSBs. 
     
 5. Move the “counter’ variable outside of main (at the top of the file):
     * Part A - **Question**: What is the scope of the variable “counter”?\
@@ -68,7 +74,8 @@
     **Answer**: 4
     
     * Part B - **Question**: Explain why the counter value has changed?\
-    **Answer**: because pointer...TODO
+    **Answer**: The pointer accesses the memory location where *counter* is stored. The pointer is then dereferenced to acess the
+    value at the memory location of *counter*. Once it has access to the value, it can manipulate it (in this case, increment it). 
     
 7. Run the same program on the evaluation board:
     * Part A - **Question**: What is the address where “counter” is stored?\
