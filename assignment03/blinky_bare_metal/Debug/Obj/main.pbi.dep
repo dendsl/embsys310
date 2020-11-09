@@ -1,9 +1,0 @@
-main.pbi: \
-  C:\UW_Workspace\EMBSYS100\Assignment_03\bare_metal\Inc\stm32l475_discovery.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
-  C:\UW_Workspace\EMBSYS100\Assignment_03\bare_metal\Inc\stm32L475.h \
-  C:\UW_Workspace\EMBSYS100\Assignment_03\bare_metal\main.c
