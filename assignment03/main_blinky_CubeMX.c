@@ -96,10 +96,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
     HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
     HAL_Delay(1000);
+   
+    /* USER CODE END WHILE */
     
     /* USER CODE BEGIN 3 */
   }
