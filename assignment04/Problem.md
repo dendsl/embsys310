@@ -41,15 +41,15 @@ Create a function “func1” with 5 arguments and call “func1” from within 
 
 **Question A**: How does the **calling** function “func2” pass the values to the **called** function “func1”?
 
-**Answer** TODO
+**Answer** The values passed into "func1" within the calling function "func2" are moved (using MOVs) into the CPU's general purpose Registers R0-R3. Note that there are five variables and only 4 general purpose registers use, the compiler pushed the extra value onto the stack using the STR operation. "func1" then moves the values stored on the general purpose registers R0-R4 into the R5-R7, R12 general purpose registers. What this is doing is essentially making *copies* of the values of "func2" for "func1" to use.
 
 **Question B**: What extra code did the compiler generate before calling the function “func1” with the multiple arguments?
 
-**Answer** TODO
+**Answer** The compiler pushed R7 and LR onto the stack. The compiler then moved the values-to-be-passed into the CPU's general purpose Registers R0-R3. Note that there are five variables and only 4 general purpose registers use, the compiler pushed the extra value onto the stack using the STR operation. Once the moving operations were completed, the compiler branched to "func1".
 
 **Question C**: What extra code did the compiler generate inside the called function “funct1” with the multiple list of arguments?
 
-**Answer** TODO
+**Answer** The compiler pushed R4-R7 and LR onto the stack and also popped the value of *param1* off the Stack Pointer and moved it into R4. The compiler then moved (copied) the values of Registers   R0-R4 into Registers R5-R7, R12, and LR for "func1"'s use.
 
 **Question D**: Any other observations?
 
