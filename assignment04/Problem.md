@@ -53,4 +53,12 @@ Create a function “func1” with 5 arguments and call “func1” from within 
 
 **Question D**: Any other observations?
 
-**Answer** TODO
+**Answer**
+- the values passed to "func1" were moved in reverse order (i.e. param5, then param4, etc.)
+- Param5 was stored onto Register R0, then stored on the Stack Pointer. It was then overwritten by Param4 being moved into R0.
+- Param5 was then loaded into R4 from the Stack Pointer once entering "func1". I don't understand why the values while in "func2" weren't loaded into R0-R4 to begin with (versus: R0, R0-R3). Seems a bit redudant.
+- The values were copied from R0-R4 into R5-R7, R12, and LR. Why were they not copied into R5-R9?
+- Once exiting "func1", Registers R4-R7 were popped. R0-R3 remained with values
+- Once exiting "func2", R0 was popped (with a value of 1; value of param1) therefore revertting back to a value of 5 (value of param5)
+
+
