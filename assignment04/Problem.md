@@ -1,4 +1,6 @@
-# Problem 1
+# Problem 1  
+Follow the same steps as we did in the class to blink LED1 (PA5) at a visible rate using the bitband region to enable the clock to Port A, then answer the following:  
+
 **Question A**: What instructions does the compiler produce in assembly for “writing” to the GPIO bit when using bit-band address?  
 
 **Answer** The compliler produces the 'STR' instruction which tells the CPU to store the value in *R0* (our clock enable toggle) immediately into the address at *R1* (the Bit-Band Alias address for RCC_AHB2ENR)
@@ -15,3 +17,22 @@
   <img src="https://github.com/dendsl/embsys310/blob/main/assignment04/project_bit_band/debug_register_manipulation.JPG">
 </p>
 
+
+# Problem 2 
+Create a function “func1” with 5 arguments and call “func1” from within another function “func2”. Trace thru the assembler and note:  
+
+**Question A**: How does the **calling** function “func2” pass the values to the **called** function “func1”?
+
+**Answer** TODO
+
+**Question B**: What extra code did the compiler generate before calling the function “func1” with the multiple arguments?
+
+**Answer** TODO
+
+**Question C**: What extra code did the compiler generate inside the called function “funct1” with the multiple list of arguments?
+
+**Answer** TODO
+
+**Question D**: Any other observations?
+
+**Answer** TODO
