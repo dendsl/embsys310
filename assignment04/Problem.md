@@ -21,6 +21,24 @@ Follow the same steps as we did in the class to blink LED1 (PA5) at a visible ra
 # Problem 2 
 Create a function “func1” with 5 arguments and call “func1” from within another function “func2”. Trace thru the assembler and note:  
 
+    void func1(int param1, int param2, int param3, int param4, int param5)
+    {
+        int temp1 = param1;
+        int temp2 = param2;
+        int temp3 = param3;
+        int temp4 = param4;
+        int temp5 = param5;
+        
+        return;
+    }
+     
+    void func2(void)
+    {
+        func1(1,2,3,4,5);
+        
+        return;
+    }
+
 **Question A**: How does the **calling** function “func2” pass the values to the **called** function “func1”?
 
 **Answer** TODO
