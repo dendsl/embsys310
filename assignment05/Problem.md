@@ -29,11 +29,13 @@ Invoke the function “PrintString” from within divAsm before doing the divisi
 
 Image of Function *divAsm()*
 <p align="center">
-  <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/swapPointers/postSwap.JPG">
+  <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/divAsm/divAsm Function.JPG">
 </p>
 
+
+Image of Terra Term output of program
 <p align="center">
-  <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/swapPointers/postSwap.JPG">
+  <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/divAsm/Terra_Term_Output.JPG">
 </p>
 
 
