@@ -22,3 +22,18 @@ Create a function in “C” that allows swapping of two pointers
 <p align="center">
   <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/swapPointers/postSwap.JPG">
 </p>
+
+# Problem 2
+Create a new file divAsm.s. Start with the Assembly demo code shared in class. Write the assembly code to take an input argument, divide it by 2, and return the result.
+Invoke the function “PrintString” from within divAsm before doing the division computation. Add a comment for every statement in your assembly function code. Invoke divAsm() inside of your main function in main.c Run your program on the board and capture a snapshot image of the output from TeraTerm showing the result of the divAsm.
+
+Image of Function *divAsm()*
+<p align="center">
+  <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/swapPointers/postSwap.JPG">
+</p>
+
+<p align="center">
+  <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/swapPointers/postSwap.JPG">
+</p>
+
+
