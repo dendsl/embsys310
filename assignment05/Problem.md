@@ -3,13 +3,13 @@ Create a function in “C” that allows swapping of two pointers
 
 **Question A**: Explain what the “main” function does in order to setup the input arguments prior to calling the swap_pointer() function?  
 
-**Answer:** TODO  
+**Answer:** First, "main" initializes the variables by performing instructions to load, add, and store the variables onto the stack. Before "swap_pointer" is called, all the variables are located on the stack. 
 
 
 
 **Question B**: What are the values in R0 & R1 when swap_pointer() is called?   
 
-**Answer:** 
+**Answer:** When "swap_pointer() is called, the location (address) values of xPtr and yPtr are stored in R0 and R1 using the Stack Pointer. The locations of xPtr and yPtr are used because swap_pointers() is using a pointer-to-a-pointer call, therefore the address of the pointers are the input arguments (i.e. their locations on the stack). 
 
 <p align="center">
   <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/swapPointers/Answer 1B.JPG">
