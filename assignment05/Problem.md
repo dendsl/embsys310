@@ -38,4 +38,10 @@ Image of Terra Term output of program
   <img src="https://github.com/dendsl/embsys310/blob/main/assignment05/divAsm/Terra_Term_Output.JPG">
 </p>
 
+# Problem 3
+Implement a swap function in assembly and call it “swapCharsAsm”:  
+(A) It takes as input two variables of char data type each and swaps the two chars.  
+(B) Add a comment for every statement in your assembly function code.  
+(C) **Bonus:** Return 0 if the two chars are identical; otherwise, return 1.  
+
 
