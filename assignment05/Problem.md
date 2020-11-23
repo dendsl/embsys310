@@ -43,5 +43,58 @@ Implement a swap function in assembly and call it “swapCharsAsm”:
 (A) It takes as input two variables of char data type each and swaps the two chars.  
 (B) Add a comment for every statement in your assembly function code.  
 (C) **Bonus:** Return 0 if the two chars are identical; otherwise, return 1.  
+         
+          /*******************************************************************************
+          Function Name   : swapCharsAsm
+          Description     : Calls C code to print a string; 
+                            swaps the values of its input, char arguments
+          C Prototype     : void divAsm(char *a, char *b)
+                          : Where the inputs are pointers to char variables
+          Parameters      : R0: pointer to char variable, 'a'
+                          : R1: pointer to char variable, 'b'
+          Return value    : N/A
+          *******************************************************************************/  
+
+          swapCharsAsm
+
+          // Initial assumptions - Before swapCharsAsm is called - the inputs are stored on the stack.
+          // The address of the values residing on the stack are stored/moved onto the input
+          // argument registers R0 and R1 where:
+          //      R0 -> pointing to the Stack address of char 'a'
+          //      R1 -> pointing to the Stack address of char 'z'
+
+          /*
+              (1) char temp = *a;
+              (2) *a = *b;
+              (3) *b = temp;
+          */
+
+              // (1) "C" code translation step: 
+              //          char temp = *a;
+              LDRB R2, [R0]       // Load the byte value at the address held by R0 into R2 where.
+                                  // Note - we use LDRB because a char is a byte, therefore we must load
+                                  // the whole byte data into R2. 
+
+
+              // (2) "C" code translation step:
+              //          *a = *b;
+              LDRB R3, [R1]       // Load the byte value at the address held by R1 into R3 where.
+                                  // Note - we use LDRB because a char is a byte, therefore we must load
+                                  // the whole byte data into R3.    
+
+              STRB R3, [R0]       // Store the byte value held by R3 into the address held by R0
+
+              // (3) "C" code translation step: 
+              //          *b = temp;
+              STRB R2, [R1]       // Store the byte value held by R2 into the address held by R1
+
+              BX LR
+
+              END
+
+             }
+
+
+
 
 
