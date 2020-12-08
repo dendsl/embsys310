@@ -4,7 +4,6 @@
 #define ON            1
 #define OFF           0
 #define PIN_5         5
-#define PORT_A        0
 #define LED1_PIN     (PIN_5)
 #define SYS_CLOCK_HZ 4000000u   // Default clock after startup
                                 // Section 3.11 in STM32L475 datasheet DS10969
@@ -12,7 +11,6 @@
 
 uint32_t g_miliDelayCounter;
 
-void SysTick_Initialize(void);
 void RCC_Init(void);
 void GPIO_Init(void);
 
