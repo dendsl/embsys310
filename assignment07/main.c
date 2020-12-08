@@ -33,23 +33,19 @@ void main(void)
     }
     
     return;
-
 }
 
 
-void GPIO_Init(void)
+void toggle_LED1(uint8_t toggle, uint32_t counterDelay)
 {
-  GPIOA->MODER |=  (1 << (LED1_PIN * 2));
-  GPIOA->MODER &= ~(1 << (LED1_PIN * 2) + 1);
-}
-
-
-void SysTick_Set()
-{ 
-    SysTick->CTRL = 0;                    // Disable SysTick during set up
-    SysTick->LOAD = SYSTICK_1_MILISECOND; // Load the SysTick reload value  
-    SysTick->VAL  = 0;                    // Clear the current counter value
-    SysTick->CTRL |= 0x7;                 // Enable the SysTick Counter and Interrupt
+    // Clear the current LED1 Pin Bit
+    GPIOA->ODR &= ~(1 << LED1_PIN);
+    
+    // Set the LED1 Pin bit based
+    GPIOA->ODR |=  (toggle << LED1_PIN);
+   
+    // Delay for counterDelay mili-seconds
+    delay(counterDelay);
 }
 
 
@@ -60,30 +56,14 @@ void delay(uint32_t delayInMilliseconds)
     g_miliDelayCounter = delayInMilliseconds;
     SysTick_Set();
     
-    //uint32_t pGPIOA_Data = GPIOA_BASE;
-    // Wait for SysTick->CTRL COUNTFLAG returns 1
+    // Wait for the global delay counter to reach 0
     while(g_miliDelayCounter != 0);
     
     SysTick->CTRL = 0; // Disable SysTick
 }
 
 
-void toggle_LED1(uint8_t toggle, uint32_t counterDelay)
-{
-    // Clear the current LED1 Pin Bit
-    GPIOA->ODR &= ~(1 << LED1_PIN);
-    
-    // Set the LED1 Pin based off toggle 
-    if (toggle)
-    {
-      GPIOA->ODR |=  (1 << LED1_PIN);
-    }
-    
-    // Delay for counterDelay mili-seconds
-    delay(counterDelay);
-}
-
-
+// Interrupt Handler for SysTick. Decrements the g_miliDelayCounter every 1 ms
 void SysTick_Handler(void)
 {
     __disable_irq();
@@ -94,8 +74,25 @@ void SysTick_Handler(void)
 }
 
 
+// SysTick set function. Sets SysTick to generare an interrupt every 1 ms. 
+void SysTick_Set()
+{ 
+    SysTick->CTRL = 0;                    // Disable SysTick during set up
+    SysTick->LOAD = SYSTICK_1_MILISECOND; // Load the SysTick reload value  
+    SysTick->VAL  = 0;                    // Clear the current counter value
+    SysTick->CTRL |= 0x7;                 // Enable the SysTick Counter and Interrupt
+}
+
+
 void RCC_Init(void)
 {
   RCC->AHB2ENR |= (1 << PORT_A);
+}
+
+
+void GPIO_Init(void)
+{
+  GPIOA->MODER |=  (1 << (LED1_PIN * 2));
+  GPIOA->MODER &= ~(1 << (LED1_PIN * 2) + 1);
 }
 
