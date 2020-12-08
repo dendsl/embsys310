@@ -1,4 +1,4 @@
-# Problem 1  
+# Problem 2
 Generate the map file (in my case, vector_table.map) for your program and provide details on:
 
 **Question A**: How much total ROM your program is occupying?
